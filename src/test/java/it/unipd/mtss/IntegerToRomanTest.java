@@ -77,6 +77,7 @@ public class IntegerToRomanTest
         romanValues.put('V', 5);
         romanValues.put('X', 10);
         romanValues.put('L', 50);
+        romanValues.put('C', 100);
     
         int result = 0;
         int prevValue = 0;
@@ -100,9 +101,47 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_IVXL(){
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 50; i++){
+        for(int i = 1; i <= 100; i++){
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
     });
+    }
+
+    @Test
+    public void IntergerToRomanTest_CDM() {
+        assertEquals("C", IntegerToRoman.convert(100));
+    }
+
+    public int romanToInteger_CDM(String romanNumeral) {
+
+        Map<Character, Integer> romanValues = new HashMap<>();
+        romanValues.put('C', 100);
+
+        int result = 0;
+        int prevValue = 0;
+
+        for (int i = romanNumeral.length() - 1; i >= 0; i--) {
+            char currentChar = romanNumeral.charAt(i);
+            int currentValue = romanValues.get(currentChar);
+
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+
+            prevValue = currentValue;
+        }
+
+        return result;
+    }
+
+    @Test
+    public void romanToIntegerTest_CDM() {
+        assertTimeout(Duration.ofMillis(1000), () -> {
+        for (int i = 100; i <= 100; i = i + 100) {
+            assertEquals(i, romanToInteger_CDM(IntegerToRoman.convert(i)));
+        }
+        });
     }
 }

@@ -38,6 +38,7 @@ public class RomanPrinter {
       case "V": return RomanNumber.V[row];
       case "X": return RomanNumber.X[row];
       case "L": return RomanNumber.L[row];
+      case "C": return RomanNumber.C[row];
       default: return "";
     }
   }
