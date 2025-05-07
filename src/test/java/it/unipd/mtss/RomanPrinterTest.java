@@ -1,7 +1,3 @@
-//////////////////////////////////////////////////////////////////// 
-// [Alessandro] [Mazzariol] [2101050] 
-// [Marco] [Barbiero] [2101049] 
-////////////////////////////////////////////////////////////////////
 package it.unipd.mtss;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -86,7 +82,7 @@ public class RomanPrinterTest {
     @Test
     public void test() {
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 3; i++) {
+        for(int i = 1; i <= 6; i++) {
         String output = RomanPrinter.print(i);
         System.out.println(output); // STAMPA SU CONSOLE
         System.out.println("- " + i); // Mostra il numero corrispondente

@@ -35,6 +35,7 @@ public class RomanPrinter {
   private static String getAsciiLine(String ch, int row) {
     switch (ch) {
       case "I": return RomanNumber.I[row];
+      case "V": return RomanNumber.V[row];
       default: return "";
     }
   }

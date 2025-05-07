@@ -1,7 +1,3 @@
-//////////////////////////////////////////////////////////////////// 
-// [Alessandro] [Mazzariol] [2101050] 
-// [Marco] [Barbiero] [2101049] 
-////////////////////////////////////////////////////////////////////
 package it.unipd.mtss;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,6 +49,7 @@ public class IntegerToRomanTest
     public void intergerToRomanTest_IVXL()
     {   
         assertEquals("I", IntegerToRoman.convert(1));
+        assertEquals("V", IntegerToRoman.convert(5));
     }
 
 
@@ -66,6 +63,7 @@ public class IntegerToRomanTest
     public int romanToInteger_IVXL(String romanNumeral) {
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
+        romanValues.put('V', 5);
     
         int result = 0;
         int prevValue = 0;
@@ -89,7 +87,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_IVXL(){
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 3; i++){
+        for(int i = 1; i <= 6; i++){
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
     });
