@@ -112,6 +112,9 @@ public class IntegerToRomanTest
 	    assertEquals("CC", IntegerToRoman.convert(200));
         assertEquals("CD", IntegerToRoman.convert(400));
         assertEquals("D", IntegerToRoman.convert(500));
+	    assertEquals("DCC", IntegerToRoman.convert(700));
+        assertEquals("CM", IntegerToRoman.convert(900));
+        assertEquals("M", IntegerToRoman.convert(1000));
     }
 
     public int romanToInteger_CDM(String romanNumeral) {
@@ -119,6 +122,8 @@ public class IntegerToRomanTest
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('C', 100);
  	    romanValues.put('D', 500);
+        romanValues.put('M', 1000);
+        
 
         int result = 0;
         int prevValue = 0;
@@ -142,7 +147,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_CDM() {
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for (int i = 100; i <= 500; i = i + 100) {
+        for (int i = 100; i <= 1000; i = i + 100) {
             assertEquals(i, romanToInteger_CDM(IntegerToRoman.convert(i)));
         }
         });

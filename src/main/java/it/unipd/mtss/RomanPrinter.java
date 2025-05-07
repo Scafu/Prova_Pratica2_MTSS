@@ -40,6 +40,7 @@ public class RomanPrinter {
       case "L": return RomanNumber.L[row];
       case "C": return RomanNumber.C[row];
       case "D": return RomanNumber.D[row];
+      case "M": return RomanNumber.M[row];
       default: return "";
     }
   }
