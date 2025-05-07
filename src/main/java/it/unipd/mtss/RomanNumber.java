@@ -51,4 +51,11 @@ public class RomanNumber {
                                       "| |____ ",
                                       " \\_____|"};
 
+    public final static String[] D = {" _____  ",
+                                      "|  __ \\ ",
+                                      "| |  | |",
+                                      "| |  | |",
+                                      "| |__| |",
+                                      "|_____/ "};
+
 }

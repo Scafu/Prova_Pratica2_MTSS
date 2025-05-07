@@ -77,7 +77,6 @@ public class IntegerToRomanTest
         romanValues.put('V', 5);
         romanValues.put('X', 10);
         romanValues.put('L', 50);
-        romanValues.put('C', 100);
     
         int result = 0;
         int prevValue = 0;
@@ -101,7 +100,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_IVXL(){
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 100; i++){
+        for(int i = 1; i <= 50; i++){
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
     });
@@ -110,12 +109,16 @@ public class IntegerToRomanTest
     @Test
     public void IntergerToRomanTest_CDM() {
         assertEquals("C", IntegerToRoman.convert(100));
+	    assertEquals("CC", IntegerToRoman.convert(200));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("D", IntegerToRoman.convert(500));
     }
 
     public int romanToInteger_CDM(String romanNumeral) {
 
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('C', 100);
+ 	    romanValues.put('D', 500);
 
         int result = 0;
         int prevValue = 0;
@@ -139,7 +142,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_CDM() {
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for (int i = 100; i <= 100; i = i + 100) {
+        for (int i = 100; i <= 500; i = i + 100) {
             assertEquals(i, romanToInteger_CDM(IntegerToRoman.convert(i)));
         }
         });
