@@ -22,12 +22,19 @@ public class RomanNumber {
                                       "  | |  ",
                                       " _| |_ ",
                                       "|_____|" };
-                                      
+   
     public final static String[] V = {"__      __",
                                       "\\ \\    / /",
                                       " \\ \\  / / ",
                                       "  \\ \\/ /  ",
                                       "   \\  /   ",
                                       "    \\/    "};
+
+    public final static String[] X = {"__   __",
+                                      "\\ \\ / /",
+                                      " \\ V / ",
+                                      "  > <  ",
+                                      " / . \\ ",
+                                      "/_/ \\_\\"};
 
 }

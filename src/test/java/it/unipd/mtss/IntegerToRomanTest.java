@@ -50,6 +50,7 @@ public class IntegerToRomanTest
     {   
         assertEquals("I", IntegerToRoman.convert(1));
         assertEquals("V", IntegerToRoman.convert(5));
+        assertEquals("X", IntegerToRoman.convert(10));
     }
 
 
@@ -64,6 +65,7 @@ public class IntegerToRomanTest
         Map<Character, Integer> romanValues = new HashMap<>();
         romanValues.put('I', 1);
         romanValues.put('V', 5);
+        romanValues.put('X', 10);
     
         int result = 0;
         int prevValue = 0;
@@ -87,7 +89,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_IVXL(){
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 6; i++){
+        for(int i = 1; i <= 10; i++){
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
     });

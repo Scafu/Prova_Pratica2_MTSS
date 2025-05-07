@@ -34,8 +34,9 @@ public class RomanPrinter {
   //Metodo estratto per ridurre la complessità
   private static String getAsciiLine(String ch, int row) {
     switch (ch) {
-      case "I": return RomanNumber.I[row];
+      case "I": return RomanNumber.I[row]; 
       case "V": return RomanNumber.V[row];
+      case "X": return RomanNumber.X[row];
       default: return "";
     }
   }
