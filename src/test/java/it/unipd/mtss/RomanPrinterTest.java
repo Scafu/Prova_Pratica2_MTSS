@@ -82,7 +82,7 @@ public class RomanPrinterTest {
     @Test
     public void test() {
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 20; i++) {
+        for(int i = 1; i <= 50; i++) {
         String output = RomanPrinter.print(i);
         System.out.println(output); // STAMPA SU CONSOLE
         System.out.println("- " + i); // Mostra il numero corrispondente

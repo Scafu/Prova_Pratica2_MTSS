@@ -54,6 +54,13 @@ public class IntegerToRomanTest
         assertEquals("XII", IntegerToRoman.convert(12));
         assertEquals("XVII", IntegerToRoman.convert(17));
         assertEquals("XX", IntegerToRoman.convert(20));
+        assertEquals("XXIV", IntegerToRoman.convert(24));
+        assertEquals("XXV", IntegerToRoman.convert(25));
+        assertEquals("XXXVIII", IntegerToRoman.convert(38));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("XLIV", IntegerToRoman.convert(44));
+        assertEquals("XLVI", IntegerToRoman.convert(46));
+        assertEquals("L", IntegerToRoman.convert(50));
     }
 
 
@@ -69,6 +76,7 @@ public class IntegerToRomanTest
         romanValues.put('I', 1);
         romanValues.put('V', 5);
         romanValues.put('X', 10);
+        romanValues.put('L', 50);
     
         int result = 0;
         int prevValue = 0;
@@ -92,7 +100,7 @@ public class IntegerToRomanTest
     @Test
     public void romanToIntegerTest_IVXL(){
         assertTimeout(Duration.ofMillis(1000), () -> {
-        for(int i = 1; i <= 20; i++){
+        for(int i = 1; i <= 50; i++){
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
     });
